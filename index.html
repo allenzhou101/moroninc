@@ -5,52 +5,90 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vibes&display=swap" rel="stylesheet">
 
     <title></title>
   </head>
   <body>
     <div class = "navigation">
       <a class = "left" href = "#target1">Moron</a>
-      <a class = "right" href = "#0" onclick="smoothScroll(document.getElementById('scroll-target'))">contact</a>
+      <a class = "right" href = "#0" onclick="smoothScroll(document.getElementById('scroll-target'))">
+        <div class = "line"></div>
+        <div class = "line"></div>
+      </a>
     </div>
     <div class = "container">
-      <p class = "slogan">We're not idiots...</p>
-       <!-- <br>OR<br> Many Morons makes a genius. -->
-      <div class = "title">
-        <div class = "top">We Are</div>
-        <div class = "bottom">Moron</div>
+      <div class = "title-container">
+        <p class = "slogan">We're not idiots, we are...</p>
+         <!-- <br>OR<br> Many Morons makes a genius. -->
+        <div class = "title">
+          <div class = "top">
+            <!-- We Are -->
+          </div>
+          <div class = "bottom">Moron</div>
+        </div>
+
+        <p class = "description_1">
+          Together, we can make products that changes the world. 😝
+        </p>
       </div>
+      <img class = "image-1" src = "images/one.jpg" width = "800px">
 
-      <p class = "description">
-
-
+      <p class = "description_2">
         Everyone has all these random ideas of crazy inventions and this group is a place where those
         ideas can come to life through hard work and learning. We’re morons because no one else would
         follow through on these ideas and we want to. Idiots would just let the idea pass them up and
         never think about it again. We hope to create something awesome that brings people joy and know
-        that moron is a great place to start that goal out. Together, we can make a product that changes the world.
+        that moron is a great place to start that goal out. Many Morons makes a genius.
       </p>
-      <img class = "image-1" src = "images/one.jpg" width = "800px">
+
 
       <div class = "call-to-action" id = "scroll_target">
       <!-- <p>An innovation squad that makes stuff. That's what's up. Say what's up at:</p> -->
-      <p class = "c2a-words">An innovation squad that makes stuff. That's what's up. Say what's up or learn more about us at:</p>
+      <!-- <p class = "c2a-words">An innovation squad that makes stuff. That's what's up. Say what's up or learn more about us at:</p> -->
       <div class = "links" >
-        <a class = "email" href = "@mailto:">ouremail@email.com</a>
+        <!-- <a class = "email" href = "@mailto:">ouremail@email.com</a> -->
 
-        <a class = "youtube" href = "youtube.com">youtube.com/moron</a>
+        <a class = "youtube" href = "youtube.com">view our Youtube <p style = "display: inline-block; font-size: 6vh;">&#8640;</p></a>
       </div>
 
+
+
 </div>
+
+
+    </div>
+
+    <div class = "contact">
+      <div class = "inner-contact">
+        <p class = "hello">Say hello</p>
+        <a class = "email" href = "@mailto:">ouremail@email.com</a>
+      </div>
+
     </div>
   </body>
   <script>
+  console.log(window.innerWidth);
+
+  if (window.innerWidth > 1080){
     document.addEventListener("scroll", function() {
       var num = window.scrollY;
-      console.log(num);
-      translateNum = num / 10;
-      document.querySelector(".top").style.transform = "translateX(" + translateNum + "px)";
-      document.querySelector(".bottom").style.transform = "translateX(-" + translateNum + "px)";
+      // translateNum = num / 10;
+      letterSpacingNum = num / 10;
+      opacityNum = 1 - num / 350;
+      // document.querySelector(".top").style.transform = "translateX(" + translateNum + "px)";
+      // document.querySelector(".bottom").style.transform = "translateX(-" + translateNum + "px)";
+      document.querySelector(".bottom").style.letterSpacing = letterSpacingNum + "px";
+      if (opacityNum >= 0 && opacityNum <= 1) {
+        document.querySelector(".title-container").style.opacity = opacityNum;
+
+      }
+      if (opacityNum < 0){
+        document.querySelector(".title-container").style.opacity = 0;
+
+      }
+
+
     });
     window.smoothScroll = function(target) {
       var scrollContainer = target;
@@ -72,5 +110,6 @@
       // start scrolling
       scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
       }
+    }
   </script>
 </html>
