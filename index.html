@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href = "main.css" rel = "stylesheet">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title></title>
+  </head>
+  <body>
+    <div class = "navigation">
+      <a class = "left" href = "#target1">Moron</a>
+      <a class = "right" href = "#0" onclick="smoothScroll(document.getElementById('scroll-target'))">contact</a>
+    </div>
+    <div class = "container">
+      <p class = "slogan">We're not idiots...</p>
+       <!-- <br>OR<br> Many Morons makes a genius. -->
+      <div class = "title">
+        <div class = "top">We Are</div>
+        <div class = "bottom">Moron</div>
+      </div>
+
+      <p class = "description">
+
+
+        Everyone has all these random ideas of crazy inventions and this group is a place where those
+        ideas can come to life through hard work and learning. We’re morons because no one else would
+        follow through on these ideas and we want to. Idiots would just let the idea pass them up and
+        never think about it again. We hope to create something awesome that brings people joy and know
+        that moron is a great place to start that goal out. Together, we can make a product that changes the world.
+      </p>
+      <img class = "image-1" src = "images/one.jpg" width = "800px">
+
+      <div class = "call-to-action" id = "scroll_target">
+      <!-- <p>An innovation squad that makes stuff. That's what's up. Say what's up at:</p> -->
+      <p class = "c2a-words">An innovation squad that makes stuff. That's what's up. Say what's up or learn more about us at:</p>
+      <div class = "links" >
+        <a class = "email" href = "@mailto:">ouremail@email.com</a>
+
+        <a class = "youtube" href = "youtube.com">youtube.com/moron</a>
+      </div>
+
+</div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("scroll", function() {
+      var num = window.scrollY;
+      console.log(num);
+      translateNum = num / 10;
+      document.querySelector(".top").style.transform = "translateX(" + translateNum + "px)";
+      document.querySelector(".bottom").style.transform = "translateX(-" + translateNum + "px)";
+    });
+    window.smoothScroll = function(target) {
+      var scrollContainer = target;
+      do { //find scroll container
+          scrollContainer = scrollContainer.parentNode;
+          if (!scrollContainer) return;
+          scrollContainer.scrollTop += 1;
+      } while (scrollContainer.scrollTop == 0);
+      var targetY = 0;
+      do { //find the top of target relatively to the container
+          if (target == scrollContainer) break;
+          targetY += target.offsetTop;
+      } while (target = target.offsetParent);
+      scroll = function(c, a, b, i) {
+          i++; if (i > 50) return;
+          c.scrollTop = a + (b - a) / 50 * i;
+          setTimeout(function(){ scroll(c, a, b, i); }, 20);
+      }
+      // start scrolling
+      scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+      }
+  </script>
+</html>

@@ -1,0 +1,91 @@
+body {
+  background: #ffe6e6;
+  /* font-family: 'Mansalva', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  /* animation: backgroundChange 5s infinite alternate; */
+  height: 200vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+p {
+  margin: 0;
+}
+@keyframes backgroundChange {
+  100% {
+    background: white;
+  }
+}
+.navigation {
+  position: fixed;
+  top: 4vh;
+  width: 90%;
+  margin-left: 5%;
+
+}
+.left {
+  float: left;
+}
+.right {
+float: right;
+}
+.container {
+  text-align: center;
+  width: 100%;
+
+}
+.slogan {
+  font-size: 2vw;
+  color: #747678;
+}
+.title {
+  font-size: 15vw;
+  color: #1a0000;
+}
+
+.description {
+  font-size: 3vh;
+  width: 60%;
+  margin: auto;
+}
+.image-1 {
+  display: flex;
+  margin: auto;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+}
+.youtube {
+}
+.email {
+  margin-bottom: 3vh;
+
+}
+.call-to-action a {
+  transition: .5s;
+  font-size: 5vh;
+  margin: 5vh;
+}
+.call-to-action a:hover {
+  color: gray;
+  /* text-decoration: none; */
+}
+.call-to-action {
+  margin: 5vh 0 5vh 0;
+
+}
+.c2a-words {
+  margin-bottom: 4vh;
+  display: inline-block;
+  width: 20%;
+  text-align: left;
+  margin-left: 5%;
+}
+.links {
+  display: inline-block;
+  width: 40%;
+  margin-left: 5%;
+  line-height: 10vh;
+}
