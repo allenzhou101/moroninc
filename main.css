@@ -20,7 +20,7 @@ p {
   width: 90%;
   margin-left: 5%;
   font-size: 3vh;
-
+  pointer-events: none;
 }
 .left {
   float: left;
@@ -136,7 +136,6 @@ vertical-align: middle;
         }
         .email {
           margin-bottom: 3vh;
-
         }
         .last {
 
@@ -170,15 +169,35 @@ vertical-align: middle;
 
 .contact a {
   margin-top: 25vh;
-  width: 100%;
+  /* width: 20%; */
+  /* display: inline-block; */
   color: white;
-  font-size: 6vw;
-
+  font-size: 4.5vw;
+  transition: .5s;
+}
+.contact a:hover {
+  /* text-decoration: underline; */
+}
+.contact a:after {
+  background: none repeat scroll 0 0 transparent;
+  /* bottom: 0; */
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  /* position: absolute; */
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.contact a:hover:after {
+  width: 73%;
+  left: 0;
 }
 .hello {
   margin-bottom: 10vh;
   color: #ffd;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 .inner-contact {
   margin-left: 20%;
