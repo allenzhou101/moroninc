@@ -36,10 +36,19 @@ vertical-align: middle;
 .line {
   height: 1px;
   width: 30px;
-  background: black;
+  background: gray;
   display: block;
-  margin-top: 1vh;
+  /* margin: 1vh; */
+  cp
 
+}
+.line:nth-child(even) {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.line:nth-child(odd) {
+  transform: rotate(-45deg);
+  transform-origin: center;
 }
 .title {
   width: 90%;
